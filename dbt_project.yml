@@ -1,11 +1,11 @@
-name: 'CDR'
+name: 'AidboxProject'
 config-version: 2
 version: '0.1'
 
-profile: 'CDR'
+profile: 'AidboxProject'
 
 models:
-  CDR:
+  AidboxProject:
     FHIR:
       +materialized: view
     view:

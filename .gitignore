@@ -7,3 +7,4 @@ cube/.cubestore
 cube/.env
 .env
 macros/utils/Preview
+.DS_Store

@@ -1,4 +1,7 @@
-# Aidbox FHIR DBT Package
+# Aidbox FHIR DBT Sample project
+
+
+dbt deps
 
 # Features
 - FHIR centric
