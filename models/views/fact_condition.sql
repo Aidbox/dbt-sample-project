@@ -1,4 +1,3 @@
-
 {{
      config(
           materialized='incremental',
@@ -25,7 +24,7 @@ SELECT   id::uuid
        , {{ aidbox.codesystem_code('clinicalStatus', 'condition-clinical')}} clinical_status
        , {{ aidbox.codesystem_code('verificationStatus', 'condition-verstatus')}} verification_status
 
-  FROM {{ ref('Condition') }}
+  FROM {{ ref('aidbox', 'Condition') }}
 
 {% if is_incremental() %}
  WHERE ts > (select max(ts) from {{ this }})
