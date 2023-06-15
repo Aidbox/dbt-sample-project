@@ -10,18 +10,18 @@
 
 SELECT   id::uuid
        , ts
-       , {{ get('type')}} type
-       , {{ get('criticality')}} criticality
-       , {{ get('patient,id')}}::uuid patient_id
-       , {{ get('recordedDate')}}::date recorded
-       , COALESCE({{ codesystem_code('code', 'SNOMED CT-INT')}}, 
-                  {{ codesystem_code('code', 'rxnorm')}})  code_code
-       , COALESCE({{ codesystem_display('code', 'SNOMED CT-INT')}}, 
-                  {{ codesystem_display('code', 'rxnorm')}})  code_display
-       , {{ codesystem_code('clinicalStatus', 'allergyintolerance-clinical')}} clinical_status
-       , {{ codesystem_code('verificationStatus', 'allergyintolerance-verstatus')}} verification_status
+       , {{ aidbox.path('type')}} type
+       , {{ aidbox.path('criticality')}} criticality
+       , {{ aidbox.path('patient,id')}}::uuid patient_id
+       , {{ aidbox.path('recordedDate')}}::date recorded
+       , COALESCE({{ aidbox.codesystem_code('code', 'SNOMED CT-INT')}}, 
+                  {{ aidbox.codesystem_code('code', 'rxnorm')}})  code_code
+       , COALESCE({{ aidbox.codesystem_display('code', 'SNOMED CT-INT')}}, 
+                  {{ aidbox.codesystem_display('code', 'rxnorm')}})  code_display
+       , {{ aidbox.codesystem_code('clinicalStatus', 'allergyintolerance-clinical')}} clinical_status
+       , {{ aidbox.codesystem_code('verificationStatus', 'allergyintolerance-verstatus')}} verification_status
 
-  FROM {{ ref('AllergyIntolerance') }}
+  FROM {{ ref('aidbox', 'AllergyIntolerance') }}
 
 {% if is_incremental() %}
  WHERE ts > (select max(ts) from {{ this }})

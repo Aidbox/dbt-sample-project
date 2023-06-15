@@ -5,8 +5,9 @@ version: '0.1'
 profile: 'AidboxProject'
 
 models:
-  AidboxProject:
+  aidbox:
     FHIR:
       +materialized: view
-    view:
+  AidboxProject:
+    views:
       +materialized: table
