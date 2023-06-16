@@ -8,7 +8,7 @@ models:
   aidbox:
     FHIR:
       +materialized: view
-      schema: dbt
+      schema: fhir
   AidboxProject:
     marts:
       +materialized: table
@@ -17,4 +17,3 @@ models:
     views:
       +materialized: table
       +unlogged: true
-      schema: dbt
