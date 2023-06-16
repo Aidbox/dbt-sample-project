@@ -1,25 +1,41 @@
 # Aidbox FHIR DBT Sample project
 
+based on Aidbox dbt package
 
+Docs -> TODO: build doc
+
+[PowerBI demo dashboard](https://app.powerbi.com/view?r=eyJrIjoiOTQ5Y2ZiMWQtYzQyNy00MzY5LWJhMjItNTJhNDM3NmY4MzhjIiwidCI6ImU5YmExNDc0LTA1MzAtNDBjZi1hZTdiLWI5NjBkOWU0M2YyYyIsImMiOjl9)
+
+
+## Install
+
+## Quick start
+- Run aidbox ...
+- Load synthea data ...
+- Sample project ...
+- Connect to aidbox database
+
+```bash
 dbt deps
+dbt seed
+dbt run
+```
 
 # Features
-- FHIR centric
-  - utils
-  - cohorts
-  - fhir datatypes tests
-  - incremental ??? ....
-  - SQL on fhir ??
-  - unnesting ?
+- Incremental
+ts, id
 - Parallel optimized
-- DB tune configuration
-
-
-## OMOP ??
+parallel workers
+- Dimensional Kimbal model
+fact_* and dim_ models
+- OLAP Cube examples
+marts 
+- Cohort analyses
+....
 
 ## Framework
 3 layers
-- RAW fhir date
+- RAW fhir data
  (here is dbt project with fhir helpers)
 - Flat usable views (dimensional/star model)
 - Aggregate your date (OLAP cube)
@@ -29,85 +45,8 @@ dbt deps
 - Create pre aggregated views (cubes)
 - Use BI
 
-## Generic dbt project instructions
-package info
-install package
-
-## Quick start
-- Run aidbox ...
-- Load synthea data ...
-- Sample project ...
-- Connect to aidbox database
 
 ## Analytics framework ...
 - Flat dimentional model ...
 - Build CUBE`s data marts ...
 - Use cube data mart on BI ...
-
-
-## Dashboard
-...
-
-## Macros
-
-### Cohorts
-
-Based on https://build.fhir.org/ig/HL7/vulcan-rwd/patients.html
-
-__Patient Demographics__
-- Birthdate
-  - `age`
-- Gender
-  - `gender`
-- Death Indicator
-  - `alive`
-  - `death`
-- Race / Ethnicity (US-CORE)
-  - `race`
-  - `ethnicity`
-
-__Visit__
-`has_encounter`
-- Class
-  `class=None, classSystem=None, classDisplay=None`
-- Reason for Visit
-  `reason=None, reasonSystem=None, reasonDisplay=None`
-- Discharge Disposition
-  `discharge=None, dischargeSystem=None, dischargeDisplay=None`
-- Admission Date
-  `adminssionDate=None, admissionLookBack=None`
-- Discharge Date
-  `dischargeDate=None, dischargeLookBack=None`
-
-__Diagnosis__
-- Diagnosis Code
-- Date
-- Confirmation Flag
-- Diagnosis Type
-
-__Lab Test__
-- Test Code
-- Date
-- Value
-- Interpretation (high, low, abnormal)
-
-__Procedure__
-- Procedure Code
-- Date
-- Outcome
-
-__Medication__
-- Drug Code
-- Administration Dates
-- Order Dates
-
-## Helpers
-- `extension`
-- race
-- has_observation ?? criteria ?
-- has_encounter
-- has_condition
-- identifier
-- full_name
-- normalize_ref 
-- geo (fips)
