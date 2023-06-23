@@ -2,15 +2,34 @@
 
 [Docs](https://github.com/Aidbox/dbt-sample-project) | [PowerBI demo](https://app.powerbi.com/view?r=eyJrIjoiOTQ5Y2ZiMWQtYzQyNy00MzY5LWJhMjItNTJhNDM3NmY4MzhjIiwidCI6ImU5YmExNDc0LTA1MzAtNDBjZi1hZTdiLWI5NjBkOWU0M2YyYyIsImMiOjl9) | [Aidbox/dbt_fhir package](https://github.com/Aidbox/dbt_fhir) | [Aidbox](http://www.health-samurai.io/aidbox) 
 ***
-based on Aidbox dbt package
 
-TODO: build doc
+This project demonstrates the work with Aidbox FHIR data with the [Aidbox/dbt_fhir](https://github.com/Aidbox/dbt_fhir) package. In this project, you can find examples how to create a flat representation of FHIR data and building analytical models.
 
 ## Quick start
-- Run aidbox ...
-- Load synthea data ...
-- Sample project ...
-- Connect to aidbox database
+- Run aidbox - https://docs.aidbox.app/getting-started
+- Load synthea data 
+  - https://github.com/synthetichealth/synthea
+  - https://docs.aidbox.app/api-1/bulk-api-1
+- Connect to the Aidbox database
+
+  Create dbt [connection profile](https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles)  `~/.dbt/profiles.yml`
+  ```yml
+  AidboxProject:
+    target: dev
+    outputs:
+      dev:
+        type: postgres
+        host: "<aidbox_db_host>" 
+        port: "<aidbox_db_port>"
+        user: "<aidbox_db_user>"
+        password: "<aidbox_db_password>" 
+        dbname: "<aidbox_db_name>"
+        schema: public
+        threads: 5
+        keepalives_idle: 3 # default 0, indicating the system default. See below
+        connect_timeout: 100 # default 10 seconds
+        retries: 5  # default 1 retry on error/timeout when opening connections
+  ```
 
 ## Install
 
