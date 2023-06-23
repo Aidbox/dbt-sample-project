@@ -2,7 +2,6 @@
 .vscode
 dbt_packages
 logs
-target
 cube/.cubestore
 cube/.env
 .env
