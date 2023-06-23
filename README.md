@@ -1,13 +1,10 @@
-# Aidbox FHIR DBT Sample project
+# Aidbox FHIR - DBT Sample project
 
+[Docs](https://github.com/Aidbox/dbt-sample-project) | [PowerBI demo](https://app.powerbi.com/view?r=eyJrIjoiOTQ5Y2ZiMWQtYzQyNy00MzY5LWJhMjItNTJhNDM3NmY4MzhjIiwidCI6ImU5YmExNDc0LTA1MzAtNDBjZi1hZTdiLWI5NjBkOWU0M2YyYyIsImMiOjl9) | [Aidbox/dbt_fhir package](https://github.com/Aidbox/dbt_fhir) | [Aidbox](http://www.health-samurai.io/aidbox) 
+***
 based on Aidbox dbt package
 
-Docs -> TODO: build doc
-
-[PowerBI demo dashboard](https://app.powerbi.com/view?r=eyJrIjoiOTQ5Y2ZiMWQtYzQyNy00MzY5LWJhMjItNTJhNDM3NmY4MzhjIiwidCI6ImU5YmExNDc0LTA1MzAtNDBjZi1hZTdiLWI5NjBkOWU0M2YyYyIsImMiOjl9)
-
-
-## Install
+TODO: build doc
 
 ## Quick start
 - Run aidbox ...
@@ -15,11 +12,14 @@ Docs -> TODO: build doc
 - Sample project ...
 - Connect to aidbox database
 
+## Install
+
 ```bash
 dbt deps
 dbt seed
-dbt run
 ```
+
+
 
 # Features
 - Incremental
@@ -50,3 +50,7 @@ marts
 - Flat dimentional model ...
 - Build CUBE`s data marts ...
 - Use cube data mart on BI ...
+
+
+***
+Powered by [Health Samurai](http://www.health-samurai.io) | [Aidbox](http://www.health-samurai.io/aidbox) | [Fhirbase](http://www.health-samurai.io/fhirbase)
