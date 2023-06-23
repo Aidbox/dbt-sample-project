@@ -1,18 +1,14 @@
 # Aidbox FHIR - DBT Sample project
 
-[Docs](https://github.com/Aidbox/dbt-sample-project) | [PowerBI demo](https://app.powerbi.com/view?r=eyJrIjoiOTQ5Y2ZiMWQtYzQyNy00MzY5LWJhMjItNTJhNDM3NmY4MzhjIiwidCI6ImU5YmExNDc0LTA1MzAtNDBjZi1hZTdiLWI5NjBkOWU0M2YyYyIsImMiOjl9) | [Aidbox/dbt_fhir package](https://github.com/Aidbox/dbt_fhir) | [Aidbox](http://www.health-samurai.io/aidbox) 
+[Docs](https://aidbox.github.io/dbt-sample-project) | [PowerBI demo](https://app.powerbi.com/view?r=eyJrIjoiOTQ5Y2ZiMWQtYzQyNy00MzY5LWJhMjItNTJhNDM3NmY4MzhjIiwidCI6ImU5YmExNDc0LTA1MzAtNDBjZi1hZTdiLWI5NjBkOWU0M2YyYyIsImMiOjl9) | [Aidbox/dbt_fhir package](https://github.com/Aidbox/dbt_fhir) | [Aidbox](http://www.health-samurai.io/aidbox) 
 ***
 
 This project demonstrates the work with Aidbox FHIR data with the [Aidbox/dbt_fhir](https://github.com/Aidbox/dbt_fhir) package. In this project, you can find examples how to create a flat representation of FHIR data and building analytical models.
 
 ## Quick start
-- Run aidbox - https://docs.aidbox.app/getting-started
-- Load synthea data 
-  - https://github.com/synthetichealth/synthea
-  - https://docs.aidbox.app/api-1/bulk-api-1
-- Connect to the Aidbox database
-
-  Create dbt [connection profile](https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles)  `~/.dbt/profiles.yml`
+- Run aidbox - Install and run Aidbox following [getting starter](https://docs.aidbox.app/getting-started) guide 
+- Load synthetic data usign [Synthea](https://github.com/synthetichealth/synthea) and [Aidbox bulk api](https://docs.aidbox.app/api-1/bulk-api-1)
+- Connect to the Aidbox database. Create dbt [connection profile](https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles) via `~/.dbt/profiles.yml`
   ```yml
   AidboxProject:
     target: dev
